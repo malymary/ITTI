@@ -18,7 +18,7 @@ family_tree["Nikolay First"] = []
 family_tree["Yekaterina Second"] = []
 
 
-def find_napoleon(name):
+def is_napoleon(name):
     return name == "Napoleon"
 
 
@@ -29,12 +29,13 @@ def napoleon_search(key, graph):
 
     while queue:
         person = queue.popleft()
-        if find_napoleon(person):
-            print("I am Napoleon's heir!")
-            return True
-        else:
-            checked.append(person)
-            queue += graph[person]
+        if person not in checked:
+            if is_napoleon(person):
+                print("I am Napoleon's heir!")
+                return True
+            else:
+                checked.append(person)
+                queue += graph[person]
     return False
 
 
