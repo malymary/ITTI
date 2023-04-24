@@ -8,7 +8,7 @@ def recursive_count(array):
     else:
         return 1 + recursive_count(array[1:])
         
-print(recursive_count(b))
+print(recursive_count(a))
 
 
 
