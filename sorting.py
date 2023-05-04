@@ -1,3 +1,52 @@
+def sort_by_length(arr):
+    if arr is None:
+        return None
+    else:
+        return list(sorted(arr, key=len))
+        #return sorted(arr, key=len)
+
+print(sort_by_length(["", "moderately", "brains", "pizza"]))
+
+
+def bubbleSort(array):
+
+    for i in range(len(array)):
+
+        for j in range(0, len(array) - i - 1):
+
+            if array[j] > array[j + 1]:
+
+                temp = array[j]
+                array[j] = array[j+1]
+                array[j+1] = temp
+
+
+data = [-2, 45, 0, 11, -9]
+
+bubbleSort(data)
+
+print('Sorted Array in Ascending Order:')
+print(data)
+
+
+def insertion_sort(arr):
+    n = len(arr)
+
+    for i in range(1, n):
+        key = arr[i]
+        j = i - 1
+        while j >= 0 and key < arr[j]:
+            arr[j+1] = arr[j]
+            j -= 1
+        arr[j+1] = key
+
+
+data = [-2, 45, 0, 11, -9]
+
+insertion_sort(data)
+
+print('Sorted Array in Ascending Order:')
+print(data)
 
 
 array_1 = [1, 5, 6, 8, 9, 3]
@@ -31,6 +80,8 @@ In this optimized version, if either the left or right array has less than 10 el
 sorted() is used to sort it directly. This threshold value can be adjusted based on
 performance requirements and input data.
 '''
+
+
 def quickSort(arr):
     if len(arr) < 2:
         return arr
